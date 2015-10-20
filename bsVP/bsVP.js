@@ -1,4 +1,22 @@
+/**
+ * Bootstrap Viewport Filter (bsVP)
+ * version 1.0.0
+ * 
+ * Filters out jquery objects dependent on the viewport size. Designed 
+ * for Bootstrap v3.
+ * 
+ */
 (function($){
+	/**
+	 * jQuery function bsVP
+	 * 
+	 * @param int/string size - The cutoff viewport width
+	 * 	(BS CSS column size or #pxs).
+	 * @param string comp - string representing the comparison operator.
+	 * 
+	 * @return object $obj - This jQuery object either unchanged or 
+	 * 	emptied.
+	 */
 	$.fn.bsVP = function(size, comp){
 		switch(size){
 			case 'xs':
