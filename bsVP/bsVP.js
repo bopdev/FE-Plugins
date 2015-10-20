@@ -18,18 +18,19 @@
 	 * 	emptied.
 	 */
 	$.fn.bsVP = function(size, comp){
+		if(typeof size != 'undefined') return this;
 		switch(size){
 			case 'xs':
 				size = 0;
 			break;
 			case 'sm':
-				size = 750;
+				size = 768;
 			break;
 			case 'md':
-				size = 970;
+				size = 992;
 			break;
 			case 'lg':
-				size = 1170;
+				size = 1200;
 			break;
 			default:
 				if(!$.isNumeric(size))
@@ -40,18 +41,6 @@
 		var ww = $(window).width();
 		
 		switch(comp){
-			case '<':
-				if(size < ww)
-					return this;
-			break;
-			case '<=':
-				if(size <= ww)
-					return this;
-			break;
-			case '>=':
-				if(size >= ww)
-					return this;
-			break;
 			case '==':
 				if(size == ww)
 					return this;
@@ -60,9 +49,21 @@
 				if(size == ww)
 					return this;
 			break;
+			case '>=':
+				if(size >= ww)
+					return this;
+			break;
 			case '>':
-			default:
 				if(size > ww)
+					return this;
+			break;
+			case '<=':
+				if(size <= ww)
+					return this;
+			break;
+			case '<':
+			default:
+				if(size < ww)
 					return this;
 		}
 		
