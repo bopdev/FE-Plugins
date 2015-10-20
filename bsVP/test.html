@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-git2.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script type="text/javascript" src="bsVP.js"></script>
+
+</head>
+<body>
+<style>
+div{
+	width: 100%;
+	height: 50px;
+}
+#first{
+	background:red;
+}
+#second{
+	background:blue;
+}
+#third{
+	background:yellow;
+}
+#fourth{
+	background:green;
+}
+</style>
+<div id="first"></div>
+<div id="second"></div>
+<div id="third"></div>
+<div id="fourth"></div>
+<script type="text/javascript">
+(function($){
+	$(window).on('load resize', function(){
+		$('#first').bsVP('lg').css('display', 'none');
+		$('#second').bsVP('md').css('display', 'none');
+		$('#third').bsVP('sm').css('display', 'none');
+		$('#fourth').bsVP('xs').css('display', 'none');
+		$('#first').bsVP('lg', '<').css('display', '');
+		$('#second').bsVP('md', '<').css('display', '');
+		$('#third').bsVP('sm', '<').css('display', '');
+		$('#fourth').bsVP('xs', '<').css('display', '');
+	});
+})(jQuery);
+</script>
+</body>
+</html>
