@@ -18,7 +18,7 @@
 	 * 	emptied.
 	 */
 	$.fn.bsVP = function(size, comp){
-		if(typeof size != 'undefined') return this;
+		if(typeof size == 'undefined') return this;
 		switch(size){
 			case 'xs':
 				size = 0;
@@ -41,29 +41,29 @@
 		var ww = $(window).width();
 		
 		switch(comp){
+			case '<=':
+				if(ww <= size)
+					return this;
+			break;
 			case '==':
-				if(size == ww)
+				if(ww == size)
 					return this;
 			break;
 			case '!=':
-				if(size == ww)
+				if(ww == size)
 					return this;
 			break;
 			case '>=':
-				if(size >= ww)
-					return this;
-			break;
-			case '>':
-				if(size > ww)
-					return this;
-			break;
-			case '<=':
-				if(size <= ww)
+				if(ww >= size)
 					return this;
 			break;
 			case '<':
+				if(ww < size)
+					return this;
+			break;
+			case '>':
 			default:
-				if(size < ww)
+				if(ww > size)
 					return this;
 		}
 		
