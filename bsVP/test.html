@@ -13,34 +13,131 @@ div{
 	width: 100%;
 	height: 50px;
 }
-#first{
+.red{
 	background:red;
 }
-#second{
+.blue{
 	background:blue;
 }
-#third{
+.yellow{
 	background:yellow;
 }
-#fourth{
+.green{
 	background:green;
 }
+.test{
+	height:auto;
+	margin: 10px 0;
+}
 </style>
-<div id="first"></div>
-<div id="second"></div>
-<div id="third"></div>
-<div id="fourth"></div>
+<div id="first-test" class="test">
+	<pre>
+		$('.red').bsVP('lg').css('display', 'none');
+		$('.blue').bsVP('md').css('display', 'none');
+		$('.yellow').bsVP('sm').css('display', 'none');
+		$('.green').bsVP('xs').css('display', 'none');
+	</pre>
+	<div class="red"></div>
+	<div class="blue"></div>
+	<div class="yellow"></div>
+	<div class="green"></div>
+</div>
+<div id="second-test" class="test">
+	<pre>
+		$('.red').bsVP('lg', '<').css('display', 'none');
+		$('.blue').bsVP('md', '<').css('display', 'none');
+		$('.yellow').bsVP('sm', '<').css('display', 'none');
+		$('.green').bsVP('xs', '<').css('display', 'none');
+	</pre>
+	<div class="red"></div>
+	<div class="blue"></div>
+	<div class="yellow"></div>
+	<div class="green"></div>
+</div>
+<div id="third-test" class="test">
+	<pre>
+			$t.find('.red').bsVP('lg', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.blue').bsVP('md', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.yellow').bsVP('sm', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.green').bsVP('xs', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+	</pre>
+	<div class="red"></div>
+	<div class="blue"></div>
+	<div class="yellow"></div>
+	<div class="green"></div>
+</div>
 <script type="text/javascript">
 (function($){
 	$(window).on('load resize', function(){
-		$('#first').bsVP('lg').css('display', 'none');
-		$('#second').bsVP('md').css('display', 'none');
-		$('#third').bsVP('sm').css('display', 'none');
-		$('#fourth').bsVP('xs').css('display', 'none');
-		$('#first').bsVP('lg', '<').css('display', '');
-		$('#second').bsVP('md', '<').css('display', '');
-		$('#third').bsVP('sm', '<').css('display', '');
-		$('#fourth').bsVP('xs', '<').css('display', '');
+		$('#first-test').each(function(){
+			var $t = $(this);
+			$t.find('.red').bsVP('lg').css('display', 'none');
+			$t.find('.blue').bsVP('md').css('display', 'none');
+			$t.find('.yellow').bsVP('sm').css('display', 'none');
+			$t.find('.green').bsVP('xs').css('display', 'none');
+		});
+	});
+})(jQuery);
+(function($){
+	$(window).on('load resize', function(){
+		$('#second-test').each(function(){
+			var $t = $(this);
+			$t.find('.red').bsVP('lg', '<').css('display', 'none');
+			$t.find('.blue').bsVP('md', '<').css('display', 'none');
+			$t.find('.yellow').bsVP('sm', '<').css('display', 'none');
+			$t.find('.green').bsVP('xs', '<').css('display', 'none');
+		});
+	});
+})(jQuery);
+(function($){
+	$(window).on('load resize', function(){
+		$('#third-test').each(function(){
+			var $t = $(this);
+			$t.find('.red').bsVP('lg', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.blue').bsVP('md', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.yellow').bsVP('sm', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+			$t.find('.green').bsVP('xs', function(){
+				$(this).css('display', 'none');
+			},
+			function(){
+				$(this).css('display', '');
+			});
+		});
 	});
 })(jQuery);
 </script>
