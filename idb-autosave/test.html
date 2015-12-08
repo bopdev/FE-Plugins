@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title>IDB AUTOSAVE EXAMPLE</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dexie/1.2.0/Dexie.min.js"></script>
+	<script type="text/javascript" src="wp-idb-autosave.js"></script>
+</head>
+<body>
+	<h1>IDB AUTOSAVE EXAMPLE</h1>
+	<form id="form1">
+		<input type="hidden" name="hidden1">
+		<hr>
+		<input type="text" name="text1">
+		<input type="text" name="text2">
+		<hr>
+		<input type="checkbox" name="check1">
+		<hr>
+		<input type="checkbox" name="check2">
+		<hr>
+		<input type="checkbox" name="check3[]" value="abc">
+		<input type="checkbox" name="check3[]" value="def">
+		<input type="checkbox" name="check3[]" value="ghi">
+		<hr>
+		<input type="radio" name="radio1" value="jkl">
+		<input type="radio" name="radio1" value="mno">
+		<hr>
+		<input type="radio" name="radio2" value="pqr">
+		<input type="radio" name="radio2" value="stu">
+		<hr>
+		<textarea name="textarea1"></textarea>
+		<hr>
+		<textarea name="textarea2"></textarea>
+		<hr>
+		<select name="select1">
+			<option value="opt1">OPT1</option>
+			<option value="opt2">OPT2</option>
+			<option value="opt3">OPT3</option>
+			<option value="opt4">OPT4</option>
+		</select>
+		<hr>
+		<select name="select2">
+			<option value="opt1">OPT1</option>
+			<optgroup>
+				<option value="opt2">OPT2</option>
+				<option value="opt3">OPT3</option>
+			</optgroup>
+		</select>
+	</form>
+	<hr>
+	<hr>
+	<form action="#">
+		<input type="checkbox" name="check3[]" value="abc">
+		<input type="checkbox" name="check3[]" value="def">
+		<input type="checkbox" name="check3[]" value="ghi">
+	</form>
+	<hr>
+	<hr>
+	<form action="#">
+		<input type="checkbox" name="check3[]" value="abc">
+		<input type="checkbox" name="check3[]" value="def">
+		<input type="checkbox" name="check3[]" value="ghi">
+	</form>
+</body>
+</html>
